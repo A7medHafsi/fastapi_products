@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h1>قائمة المنتجات</h1>
+  <ul>
+    {% for p in products %}
+      <li>
+        <strong>{{ p.name }}</strong> — ${{ "%.2f"|format(p.price) }}<br>
+        <small>{{ p.description }}</small>
+      </li>
+    {% else %}
+      <li>لا توجد منتجات بعد.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
